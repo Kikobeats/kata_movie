@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Movie Party</title>
+    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.css">
+    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.icons.css">
+    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.theme.default.css">
+    <style>
+      form .select:after, .form .select:after {right: 2.7rem;}
+    </style>
+  </head>
+  <body>
+    <section class="padding bck dark">
+      <section class="margin-bottom">
+        <div class="row padding-top padding-bottom">
+          <div class="column_12 margin-bottom">
+            <h5 class="block text center">Movie Party</h5>
+            <h3 class="block text center">Who of this movie is of the <span class="text bold">year XXXX?</span></h3>
+          </div>
+          <div class="column_12 offset_1 margin-top">
+            <% if !@movies.empty? %>
+            <% for movie in @movies %>
+            <div data-tip="<%=movie.title%>" class="tip-top column_3 bck light text center margin-bottom padding-top padding-bottom padding bck theme">
+              <img class="responsive" src="<%=movie.poster%>" alt="<%=movie.title%>">
+            </div>
+            <% end %>
+            <% else %>
+            <p>Sorry, API is not available. Try later!</p>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer class="padding align center text small bck light">
+      <div class="row">
+        <div class="offset_4 column_3">
+          <form id="form" name="form">
+            <fieldset>
+              <span class="select">
+              <select data-tip="Select difficulty">
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+              </select>
+              </span>
+            </fieldset>
+          </form>
+          <small>Handcrafted by <a href="http://tapquo.com" class="text bold color theme">Kiko Beats</a></small>
+        </div>
+      </div>
+    </footer>
+    <script src="/bower_components/quojs/quo.js"></script>
+    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.js">
+  </body>
+</html>
