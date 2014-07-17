@@ -1,5 +1,6 @@
 require_relative 'movie_party.rb'
 
+
 EASY        = 3
 MEDIUM      = 5
 HARD        = 7
@@ -15,28 +16,14 @@ get '/' do
 
   else
 
-    class Item
-      attr_accessor :title, :year, :poster
-    end
+    require_relative 'fixtures.rb'
 
-    obj1 = Item.new
-    obj1.title  = 'Stars Wars Episodio I'
-    obj1.year   = '2001'
-    obj1.poster = 'http://lorempixel.com/500/768/'
+    fixture   = Fixtures.new
+    @movies   = fixture.array
+    @answer   = fixture.element
 
-    obj2 = Item.new
-    obj2.title  = 'Stars Wars Episodio III'
-    obj2.year   = '2002'
-    obj2.poster = 'http://lorempixel.com/500/768/'
-
-    obj3 = Item.new
-    obj3.title  = 'Stars Wars Episodio III'
-    obj3.year   = '2003'
-    obj3.poster = 'http://lorempixel.com/500/768/'
-
-    @movies = [ obj1, obj2, obj3 ]
-    @answer = obj1
-
+    puts "fakedata: #{@movies}"
+    puts "fakedata: #{@answer}"
 
   end
 
