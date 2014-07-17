@@ -1,15 +1,31 @@
-require 'imdb'
-require 'pry'
+require_relative 'imdb_adapter'
 
 class MovieParty
+  attr_accessor :answer
+  DEBUG = false
 
-  DEBUG         = true
-  attr_accessor :var
+  def initialize
+    proxy = IMDB.new
+  end
+
+  def game(arr)
+    # Pick the movie
+    answer = arr.sample
+  end
+
+  def order_by_year(arr)
+
+  end
+
+  def select_random(arr)
+
+
+  end
 
   def query(number)
 
     result = []
-    query  = imdb_top
+    query  = proxy.top
 
     while result.size != number
 
@@ -29,7 +45,7 @@ class MovieParty
   def search(number, query)
 
     result = []
-    query  = imdb_search(query)
+    query  = proxy.search(query)
 
     while result.size != number
 
@@ -44,23 +60,6 @@ class MovieParty
 
     result
 
-  end
-
-  ## Mapping API
-  # https://github.com/ariejan/imdb
-
-  def imdb_top
-    puts '=' * 89 if DEBUG
-    arr = Imdb::Top250.new.movies
-    puts '=' * 89 if DEBUG
-    arr
-  end
-
-  def imdb_search(query)
-    puts '=' * 89 if DEBUG
-    search = Imdb::Search.new query
-    puts '=' * 89 if DEBUG
-    search.movies
   end
 
 end

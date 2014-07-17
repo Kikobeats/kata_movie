@@ -4,27 +4,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Movie Party</title>
-    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.css">
-    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.icons.css">
-    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.theme.default.css">
+    <link rel="stylesheet" href="/css/tuktuk.css">
+    <link rel="stylesheet" href="/css/tuktuk.icons.css">
+    <link rel="stylesheet" href="/css/tuktuk.theme.default.css">
     <style>
       form .select:after, .form .select:after {right: 2.7rem;}
     </style>
   </head>
   <body>
     <section class="padding bck dark">
+
+      <!--
+      TODO: Score
+      <div class="row columns">
+        <div class="column_1 bck tuktuk padding-top padding-bottom">1</div>
+      </div> -->
+
       <section class="margin-bottom">
         <div class="row padding-top padding-bottom">
           <div class="column_12 margin-bottom">
             <h5 class="block text center">Movie Party</h5>
-            <h3 class="block text center">Who of this movie is of the <span class="text bold">year XXXX?</span></h3>
+            <h3 class="block text center">What movie was shot in <span class="text bold"><%=@answer.year%></span>?</h3>
           </div>
           <div class="column_12 offset_1 margin-top">
             <% if !@movies.empty? %>
+            <% count = 0 %>
             <% for movie in @movies %>
             <div data-tip="<%=movie.title%>" class="tip-top column_3 bck light text center margin-bottom padding-top padding-bottom padding bck theme">
-              <img class="responsive" src="<%=movie.poster%>" alt="<%=movie.title%>">
+              <img id="option_<%=count%>" class="responsive" src="<%=movie.poster%>" alt="<%=movie.title%>">
             </div>
+            <% count = count + 1 %>
             <% end %>
             <% else %>
             <p>Sorry, API is not available. Try later!</p>
@@ -51,7 +60,8 @@
         </div>
       </div>
     </footer>
-    <script src="/bower_components/quojs/quo.js"></script>
-    <link rel="stylesheet" href="/bower_components/tuktuk/tuktuk.js">
+    <script src="/js/quo.js"></script>
+    <script src="/js/tuktuk.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
