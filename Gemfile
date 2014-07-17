@@ -19,4 +19,5 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'rerun'
 end
