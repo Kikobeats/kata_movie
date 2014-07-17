@@ -6,7 +6,7 @@
 
 Prepared for deploy in Heroku (see `Procfile` file).
 
-**NOTE: ** Change `DEVELOPMENT` variable in `app.rb` to `false`.
+**NOTE:** Change `DEVELOPMENT` variable in `app.rb` to `false`.
 
 ## Development
 
