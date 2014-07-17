@@ -1,12 +1,19 @@
-# movie_party
+# Kino
 
-## Install
+> Another mobile movies game!
 
-## Running
+## Deploy
+
+Prepared for deploy in Heroku (see `Procfile` file).
+
+**NOTE: ** Change `DEVELOPMENT` variable in `app.rb` to `false`.
+
+## Development
 
 ```
-bundle exec rackup -p 1337 config.ru
+bundle exec rerun 'thin -R config.ru start -p 1337'
 ```
 
 ## License
-Please see License
+
+MIT © [Kiko Beats](http://www.kikobeats.com)
