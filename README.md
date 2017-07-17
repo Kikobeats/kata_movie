@@ -1,5 +1,7 @@
 # Kino
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kikobeats/kata_movie.svg)](https://greenkeeper.io/)
+
 > Another mobile movies game!
 
 ## Deploy
